@@ -1,15 +1,9 @@
 # Suarez-Lopez-et-al
-FIji Macros used for image analysis 
-# Macros de Fiji para [nombre del paper]
+This repository contains the FIji Macros used for image analysis in the paper Loss of RIN1 decouples dendritic spine structure from synaptic strength and impairs hippocampal long-term depression
 
-Este repositorio contiene las macros de Fiji/ImageJ usadas para el análisis 
-de imágenes del paper "[título]" (Cell Reports, [año]).
+Created and used in Fiji (v. 1.54f; Java 1.8.0_322 (64-bit) - https://imagej.net/software/fiji/
 
-## Requisitos
-- Fiji (ImageJ) versión [la que uses]
-- Plugins necesarios: [si usaste alguno, ej. StarDist]
-
-## Macros incluidas
+## Included Macros
 
 ### 1. segmentacion_celulas.ijm
 Segmenta células individuales en las imágenes a partir de [canal/marcador].
