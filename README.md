@@ -5,22 +5,18 @@ Created and used in Fiji (v. 1.54f; Java 1.8.0_322 (64-bit) - https://imagej.net
 
 ## Included Macros
 
-### 1. segmentacion_celulas.ijm
-Segmenta células individuales en las imágenes a partir de [canal/marcador].
-- Input: imágenes .tif originales
-- Output: ROIs/máscaras de segmentación por célula
+1. Dendrite segmentation.ijm
+Creates a mask for the segmentation of dendrites usign 2 Ilastik string models.
+- Input: original .czi files from the dendrites
+- Output: a .tif file with 2 channels corresponding to dendrite and background and a .tif file with a sub-stack of the selected z-planes containing the original channels. 
 
-### 2. medicion_GluA1_intensity.ijm
-Mide la intensidad de GluA1 dentro de las células segmentadas en el paso anterior.
-- Input: ROIs generadas por segmentacion_celulas.ijm + imagen original
-- Output: tabla con valores de intensidad por célula
+2. Surface_GluA1_intensity_quantification
+Measures GluA1 fluorescence intensity inside the dendrite ROI. Uses the dendrite segementation from the previous macro to create the dendrite ROI and the sub-stack to measure fluorescence intensity.
 
-### 3. medicion_GluA1_en_shank2.ijm
-Mide la intensidad de GluA1 específicamente en las áreas positivas para Shank2.
-- Input: ROIs de segmentación + canal de Shank2 + canal de GluA1
-- Output: tabla con valores de intensidad de GluA1 restringidos a áreas Shank2
+3. GluA1_in_Shank2_positive_areas.ijm
+Measures fluorescence intensity of GluA1 inside a ROI generated from thresholding Shank2 signal. Uses the dendrite mask from the first macro to create the dendrite ROI, as well as the sub-stack. 
 
-## Orden de uso
-1. Ejecutar `segmentacion_celulas.ijm` sobre las imágenes originales
-2. Ejecutar `medicion_GluA1_intensity.ijm` usando las ROIs generadas
-3. Ejecutar `medicion_GluA1_en_shank2.ijm` para el análisis específico en áreas Shank2
+
+
+
+
